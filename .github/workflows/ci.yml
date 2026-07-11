@@ -1,0 +1,11 @@
+name: ci
+on:
+  push: { branches: [main, staging] }
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: trivial gate
+        run: echo "sandbox gate ok"

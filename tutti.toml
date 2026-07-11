@@ -1,0 +1,16 @@
+# Tutti config for the live sandbox. Work merges into `staging`, never `main`.
+trunk = "main"
+routing = "trunk"
+integration_branch = "staging"
+model = "claude-haiku-4-5-20251001"
+max_issues_per_run = 1
+ci_max_polls = 40
+poll_delay_secs = 10
+
+[select]
+require_label = "status:ready"
+skip_labels = ["status:needs-human"]
+
+[gate]
+commands = ["true"]
+working_dir = ""
