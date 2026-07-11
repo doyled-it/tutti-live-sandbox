@@ -14,3 +14,11 @@ skip_labels = ["status:needs-human"]
 [gate]
 commands = ["true"]
 working_dir = ""
+
+# Sandbox: minimal skills so a cheap model does not over-engineer a trivial task.
+# A full run would point these at the superpowers skills (the shipped defaults).
+[roles]
+implementer = []
+reviewer = []
+fix_applier = []
+planner = []
