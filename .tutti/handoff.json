@@ -1,12 +1,1 @@
-{
-  "issue": 1,
-  "branch": "feat/issue-1",
-  "target": {
-    "target": "main",
-    "create_from": null
-  },
-  "pr_title": "feat: add GREETING.md at repository root",
-  "pr_body": "## Summary\n- Add GREETING.md file with greeting message to repository root\n\n## Test plan\n- [x] GREETING.md exists at repo root\n- [x] File contains exactly: \"Hello from Tutti.\"\n- [x] Minimal change: only GREETING.md added, no test files\n",
-  "labels": ["enhancement"],
-  "decision_note": "Removed test-greeting.sh per review feedback - issue requires minimal change constraint"
-}
+{"issue":3,"branch":"feat/issue-3","target":{"target":"staging","create_from":null},"pr_title":"Add FAREWELL.md at repository root","pr_body":"Create FAREWELL.md file at the repository root with the content 'Goodbye from Tutti.'\n\nImplemented test-first: test written before implementation, verified to fail, then implementation added and test verified to pass.","labels":["enhancement"],"decision_note":null}
