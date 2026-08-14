@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Rust
+/rs/target/
+
+# TypeScript
+/ts/node_modules/
+
+# Tutti engine working state
+.tutti/
+.worktrees/

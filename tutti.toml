@@ -1,24 +1,21 @@
-# Tutti config for the live sandbox. Work merges into `staging`, never `main`.
+# Tutti config for the polyglot live sandbox. Work merges into `staging`, never `main`.
 trunk = "main"
 routing = "trunk"
 integration_branch = "staging"
-model = "claude-haiku-4-5-20251001"
-max_issues_per_run = 1
+model = "sonnet"
+max_issues_per_run = 5
 ci_max_polls = 40
-poll_delay_secs = 10
+poll_delay_secs = 15
 
 [select]
 require_label = "status:ready"
 skip_labels = ["status:needs-human"]
 
 [gate]
-commands = ["true"]
+# The one canonical gate. Runs every language suite; must exit 0 before ship.
+commands = ["bash scripts/test-all.sh"]
 working_dir = ""
 
-# Sandbox: minimal skills so a cheap model does not over-engineer a trivial task.
-# A full run would point these at the superpowers skills (the shipped defaults).
-[roles]
-implementer = []
-reviewer = []
-fix_applier = []
-planner = []
+# [roles] omitted on purpose: absent => the shipped superpowers defaults
+# (subagent-driven-development + TDD for the implementer, code review for the
+# reviewer and fix-applier, tutti:planning for the planner).
